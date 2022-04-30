@@ -49,6 +49,15 @@ git push heroku main
 
 ```
 
+- Implante suas alterações
+Faça algumas alterações no código que você acabou de clonar e implante-as no Heroku usando o Git.
+
+```bash
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+
+```
 
 # Como inicio meus apps com ReactJS - SETUP
 
