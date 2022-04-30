@@ -33,7 +33,147 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Video modelo do projeto
+
+[https://www.youtube.com/watch?v=1nVUfZg2dSA]
+
 
 ## TypeScript is a language for application scale JavaScript development
 
+```bash
 yarn add typescript @types/react @types/node -D
+```
+
+## A minimal set of easy to install ESLint rules for your project
+
+```bash
+yarn eslint --init
+```
+
+1° To chck syntax, find problems, and enforce code style
+2° JavaScript modules (import/export)
+3° React
+4° Does your project use TypeScript? » Yes
+5° Where does your code run? · browser, node
+6° Use a popular style guide
+7° Standard: https://github.com/standard/standard
+8° JSON
+9° intall npm
+
+Após remover package-lock.json e rodar
+Parar o servidor antes de executar o yarn
+```bash
+yarn
+```
+
+Adicionar vscode: settings.json
+baixar extenção: eslint
+"editor.codeActionsOnSave": {
+        "source.fixAll.eslint":true
+}
+
+## Runs Prettier as an ESLint rule and reports differences as individual ESLint issues.
+
+```bash
+yarn add prettier eslint-plugin-prettier eslint-config-prettier -D
+```
+
+## Configurar arquivo: .eslintrc.json
+
+Adicionar: jest
+"env":{
+    ++
+"jest": true
+}
+
+"extends": [
+    ++
+"plugin@typescript-eslint/recommended",
+"prettier/@typescript-eslint",
+"prettier/standard",
+"prettier/react"
+]
+
+"plugins": [
+    +++
+"prettier"
+]
+
+"rules": {
+    "prettier/prettier":"error",
+    "space-before-function-paren":"off",
+    "react/prop-types": "off"
+}
+
+## Criar arquivo: .eslintignore
+
+Ele evita editar texto
+
+Escrever:
+
+node_modules
+.next
+/*.js
+
+## Criar arquivo: .prettier.config
+
+Evitar conflitos
+
+modules.exports = {
+    semi: false,
+    singleQuote: true,
+    arrowParens: 'avoid',
+    trailingComma: 'none',
+    endOfLine: 'auto'
+}
+
+## Intalar extenção: EditorConfig for VS Code
+
+mantem padrão de edição vscode
+
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+## Styled components
+
+https://github.com/vercel/next.js/tree/canary/examples/with-styled-components
+
+copiar arquivo: _document.js
+
+```bash
+yarn add styled-components
+```
+
+Criar arquivo: babel.config.js
+
+module.exports = {
+    presets: ["next/babel"],
+    plugins: [
+        [
+            "styled-components", { "ssr": true }
+        ]
+    ]
+}
+
+```bash
+yarn add @types/styled-components -D
+
+```
+
+https://dev.to/rffaguiar/nextjs-typescript-styled-components-1i3m
+
+## Criar pasta src
+
+criar pasta styles/globals.ts
+
+import {createGlobalStyle} from 'styled-components'
+
+export default createGlobalStyle`
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+`;
+
