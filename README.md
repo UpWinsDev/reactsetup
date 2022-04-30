@@ -55,7 +55,7 @@ Faça algumas alterações no código que você acabou de clonar e implante-as n
 ```bash
 $ git add .
 $ git commit -am "make it better"
-$ git push heroku master
+$ git push heroku main
 
 ```
 
