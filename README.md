@@ -33,7 +33,24 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Video modelo do projeto
+### Deploy no HEROKU
+
+-Para um aplicativo existente
+
+```bash
+heroku git:remote -a example-app
+
+```
+
+- Implante seu código
+
+```bash
+git push heroku main
+
+```
+
+
+# Como inicio meus apps com ReactJS - SETUP
 
 [https://www.youtube.com/watch?v=1nVUfZg2dSA]
 
@@ -176,4 +193,5 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 `;
+
 
