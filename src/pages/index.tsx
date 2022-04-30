@@ -1,5 +1,9 @@
 import React from 'react'
 import Head from "next/head"
+import Image from "next/image"
+
+import LogoInstagram from '../assets/instagram-icon.svg'
+import logoTwitter from '../assets/twitter-logo.png'
 
 const Home: React.FC = () => {
   return (
@@ -10,7 +14,9 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        <h1 >
+          <LogoInstagram/>
+          <Image src={logoTwitter} alt="" />
+        <h1>
           Olá mundo, Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
       </main>

@@ -203,4 +203,35 @@ export default createGlobalStyle`
     }
 `;
 
+## Tratativas de imagem
 
+[https://www.npmjs.com/package/next-images]
+
+```bash
+yarn add next-images
+
+```
+
+Adincionar na pasta: next.config.js
+
+const withImages = require('next-images')
+module.exports = withImages({ esModule: true })
+
+Adincionar na pasta: next-env.d.ts
+/// <reference types="next-images" />
+
+- Importar o svg, colocar em inline
+
+[https://github.com/airbnb/babel-plugin-inline-react-svg]
+
+```bash
+yarn add babel-plugin-inline-react-svg
+
+```
+
+Adicionar: babel.config.js
+{
+  "plugins": [
+    "inline-react-svg"
+  ]
+}
