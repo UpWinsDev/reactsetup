@@ -35,6 +35,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### Deploy no HEROKU
 
+[https://app-reactsetup.herokuapp.com/]
+
 -Para um aplicativo existente
 
 ```bash
@@ -204,6 +206,8 @@ export default createGlobalStyle`
 `;
 
 ## Tratativas de imagem
+
+[https://insideblock.com/blog/lidando-com-imagens-no-nextjs/]
 
 [https://www.npmjs.com/package/next-images]
 

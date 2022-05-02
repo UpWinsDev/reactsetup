@@ -14,8 +14,8 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-          <LogoInstagram/>
-          <Image src={logoTwitter} alt="" />
+          <LogoInstagram />
+          <Image src={logoTwitter} alt="" width="200" height="200"/>
         <h1>
           Olá mundo, Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
