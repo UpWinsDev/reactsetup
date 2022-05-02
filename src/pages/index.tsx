@@ -1,9 +1,11 @@
 import React from 'react'
 import Head from "next/head"
 import Image from "next/image"
+import Link from 'next/link'
+import Hello from './hello'
 
-import LogoInstagram from '../assets/instagram-icon.svg'
-import logoTwitter from '../assets/twitter-logo.png'
+// import LogoInstagram from '../assets/instagram-icon.svg'
+// import logoTwitter from '../assets/twitter-logo.png'
 
 const Home: React.FC = () => {
   return (
@@ -14,10 +16,35 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-          <LogoInstagram/>
-          <Image src={logoTwitter} alt="" />
+        {/* <LogoInstagram /> */}
+        {/* <Image src={logoTwitter} alt="" /> */}
         <h1>
-          Olá mundo, Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Isso é o index geral
+        </h1>
+        <h1>
+          <Link href={'/hello'}>
+            <a>Diga Hello</a>
+          </Link>
+        </h1>
+        <h1>
+          <Link href={'/soultech'}>
+            <a>Ir para a plataforma Soultech</a>
+          </Link>
+        </h1>
+        <h1>
+          <Link href={'/telessaude'}>
+            <a>Ir para a plataforma de Agendamentos</a>
+          </Link>
+        </h1>
+        <h1>
+          <Link href="/loadRepositories">
+            <a>Ver Meus Repositórios</a>
+          </Link>
+        </h1>
+        <h1>
+          <Link href="/dinamica">
+            <a>Ver Meus Testes de Rotas Dinamicas</a>
+          </Link>
         </h1>
       </main>
     </div>
