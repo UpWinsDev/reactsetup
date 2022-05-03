@@ -43,7 +43,7 @@ const Home: React.FC<AppProps> = ({ pseudoLocale }) => {
         <p className={styles.description}>{packageJson.description}</p>
 
         <div className={styles.grid}>
-          <a href={`http://multi-domain${nextSiteNr}.com:3301/${pseudoLocale}`} className={styles.card}>
+          <a href={`http://multi${nextSiteNr}-domain.com:3301/${pseudoLocale}`} className={styles.card}>
             <h3>Switch site (<code>locale</code>)</h3>
             <p>Currently: <strong>{locale}</strong></p>
             <p>Go to: site/domain {nextSiteNr}</p>

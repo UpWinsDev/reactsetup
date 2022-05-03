@@ -1,0 +1,36 @@
+// pages/_middleware.ts
+
+import { NextFetchEvent, NextRequest, NextResponse } from 'next/server'
+import { hostname } from 'os'
+
+export function middleware(req: NextRequest, ev: NextFetchEvent) {
+
+    console.log(req.nextUrl)
+
+    const {pathname, hostname} = req.nextUrl
+    if(!(pathname.startsWith('/app') || pathname.startsWith('api'))){
+        // TODO:
+        // - checar se faz pate do subdominio
+        //      - meutenant.socialmediabelt.com
+        //      - slug (puro - sem .)
+        // - custom domain
+        //      - devplano.com.br
+        // - localhost: teste
+
+        const url = req.nextUrl.clone()
+
+        let slug = hostname
+        if(hostname.indexOf('.multi-domain1.com')){
+            // subdominio
+            slug = hostname.split('.')[0]
+        }
+        if(hostname === 'localhost'){
+            slug = 'app/home'
+        }
+
+        url.pathname= '/'+ slug + '' + pathname
+        console.log(url)
+
+        return NextResponse.rewrite(url)
+    }
+}

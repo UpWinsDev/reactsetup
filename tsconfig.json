@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "additional.d.ts"
-  ],
+, "src/pages/_middleware.ts--"  ],
   "exclude": [
     "node_modules"
   ]

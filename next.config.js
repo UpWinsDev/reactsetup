@@ -19,14 +19,14 @@ const sites = {
             en: { title: 'Amparo - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den första webbplatsen', description: 'Det här är beskrivningen för den första webbplatsen.' }
         },
-        domain: 'multi-domain1.com'
+        domain: 'multi1-domain.com'
     },
     site2: {
         locales: {
             en: { title: 'Mavicard - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }
         },
-        domain: 'multi-domain2.com'
+        domain: 'multi2-domain.com'
     }
 }
 const siteKeys = Object.keys(sites)
