@@ -18,6 +18,7 @@ const Home: React.FC = () => {
           <Image src={logoTwitter} alt="" width="200" height="200"/>
         <h1>
           Olá mundo, Welcome to <a href="https://nextjs.org">Next.js!</a>
+
         </h1>
       </main>
     </div>
@@ -25,3 +26,5 @@ const Home: React.FC = () => {
 }
 
 export default Home
+
+

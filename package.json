@@ -1,37 +1,42 @@
 {
-  "name": "reactsetup",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "babel-plugin-inline-react-svg": "^2.0.1",
-    "next": "12.1.5",
-    "next-images": "^1.8.4",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "styled-components": "^5.3.5"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.30",
-    "@types/react": "^18.0.8",
-    "@types/styled-components": "^5.1.25",
-    "@typescript-eslint/eslint-plugin": "^5.21.0",
-    "@typescript-eslint/parser": "^5.21.0",
-    "eslint": "^8.14.0",
-    "eslint-config-next": "12.1.5",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.2.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "prettier": "^2.6.2",
-    "typescript": "^4.6.4"
-  }
+    "name": "reactsetup",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Hosting multiple domains with SSG (getStaticProps) using Next.js’ i18n system",
+    "author": "Tom Söderlund <tom@tomsoderlund.com>",
+    "license": "ISC",
+    "scripts": {
+        "dev": "next dev  -p 3301",
+        "build": "next build",
+        "start": "next start  -p 3301",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "babel-plugin-inline-react-svg": "^2.0.1",
+        "next": "12.1.5",
+        "next-images": "^1.8.4",
+        "react": "18.1.0",
+        "react-dom": "18.1.0",
+        "standard": "^17.0.0",
+        "styled-components": "^5.3.5"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.30",
+        "@types/react": "^18.0.8",
+        "@types/styled-components": "^5.1.25",
+        "@typescript-eslint/eslint-plugin": "^5.21.0",
+        "@typescript-eslint/parser": "^5.21.0",
+        "eslint": "^8.14.0",
+        "eslint-config-next": "12.1.5",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.25.2",
+        "eslint-plugin-n": "^15.2.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-promise": "^6.0.0",
+        "eslint-plugin-react": "^7.29.4",
+        "standard": "^17.0.0",
+        "prettier": "^2.6.2",
+        "typescript": "^4.6.4"
+    }
 }
