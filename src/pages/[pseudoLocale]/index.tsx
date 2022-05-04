@@ -78,14 +78,26 @@ const Home: React.FC<AppProps> = ({ pseudoLocale }) => {
   )
 }
 
-export default Home
-
-export const getStaticProps: GetStaticProps = async ({ params: { pseudoLocale = 'en' }, locale = 'site1' }) => {
+export const getStaticProps: GetStaticProps = async (context) => {
     // ...
- 
+
+
+    const data = [
+        { params: { pseudoLocale : 'en' }, locale : 'site1' },
+        { params: { pseudoLocale : 'en' }, locale : 'site2' },
+      ];
+
+    const project = data.find((p) => p.locale === context.locale);
+
+    if (!project) {
+        return {
+        notFound: true,
+        };
+    }
+
     return {
         props: {
-          pseudoLocale
+            pseudoLocale: project.params.pseudoLocale
         },
         revalidate: 60 // Seconds. This refresh time could be longer depending on how often data changes.
     }
@@ -94,20 +106,20 @@ export const getStaticProps: GetStaticProps = async ({ params: { pseudoLocale = 
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 
- console.log(locales)
+ //console.log(locales)
+
+    const paths = [
+        { params: { pseudoLocale: 'en' }, locale: 'site1' },
+        { params: { pseudoLocale: 'en' }, locale: 'site2' }
+    ]
 
     // ...
     return {
-        paths: [
-          { params: { pseudoLocale: 'en' }, locale: 'site1' }
-        ],
+        paths: paths,
         fallback: "blocking" // true -> build page if missing, false -> serve 404
       }
 
-      /* return {
-        paths: [
-          { params: { pseudoLocale: 'en' }, locale: 'site1' }
-        ],
-        fallback: true // true -> build page if missing, false -> serve 404
-      } */
   }
+
+
+  export default Home
