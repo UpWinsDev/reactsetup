@@ -7,7 +7,6 @@ import getConfig from 'next/config'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 import styles from '../../styles/Home.module.css'
-import packageJson from '../../../package.json'
 import logoTwitter from '../../assets/twitter-logo.png'
 
 type AppProps = { pseudoLocale: string };
@@ -27,8 +26,6 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
     <div className={[styles.container, locale, pseudoLocale].join(' ')}>
       <Head>
         <title>Multi Domain SSG using i18n</title>
-        <meta name='description' content={packageJson.description} />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main className={styles.main}>
@@ -40,7 +37,6 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
         <h1>Olá mundo - hello</h1>
         <Image src={logoTwitter} alt="" width="50" height="50"/>
 
-        <p className={styles.description}>{packageJson.description}</p>
 
         <div className={styles.grid}>
           <a href={`http://multi${nextSiteNr}-domain.com:3301/${pseudoLocale}`} className={styles.card}>
@@ -57,11 +53,11 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
             </a>
           </Link>
 
-          <div className={styles.card}>
+          {/* <div className={styles.card}>
             <h3>Props</h3>
             <p>locale (useRouter): <code>{JSON.stringify({ locales, locale, defaultLocale }, null, 2)}</code></p>
             <p>pseudoLocale: <code>{JSON.stringify({ pseudoLocales, pseudoLocale }, null, 2)}</code></p>
-          </div>
+          </div> */}
         </div>
       </main>
 
