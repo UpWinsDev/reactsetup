@@ -7,7 +7,7 @@ import {ThemeProvider} from 'styled-components'
 import GlobalStyle from '../styles/globals'
 import theme from '../styles/theme'
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp: React.FC = ({ Component, pageProps }:AppProps) => {
   return (
     <ThemeProvider theme={theme}>
         <Component {...pageProps} />

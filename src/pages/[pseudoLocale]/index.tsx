@@ -12,7 +12,7 @@ import logoTwitter from '../../assets/twitter-logo.png'
 
 type AppProps = { pseudoLocale: string };
 
-const Home: React.FC<AppProps> = ({ pseudoLocale }) => {
+const Home: React.FC = ({ pseudoLocale }: AppProps) => {
 
 
   const { locales, locale, defaultLocale } = useRouter()
