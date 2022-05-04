@@ -239,3 +239,25 @@ Adicionar: babel.config.js
     "inline-react-svg"
   ]
 }
+
+#Get started with Tailwind CSS 
+
+
+```bash
+yarn add -D tailwindcss postcss autoprefixer
+
+```
+
+- Install tailwindcss and its peer dependencies via npm, and then run the init command to generate both tailwind.config.js and postcss.config.js.
+
+```bash
+yarn tailwindcss init -p
+
+```
+
+- Crie componentes de reação CSS tailwind como componentes estilizados com nome de classes em várias linhas
+
+
+```bash
+yarn add -D tailwind-styled-components
+```

@@ -9,7 +9,7 @@ export default GoPage
 
 export const getServerSideProps = async (context) => {
 
-    const slug = context.params.pseudoLocale
+    const slug = context.params.link
     let tenant = null
 
     if(slug.indexOf('.') < 0){

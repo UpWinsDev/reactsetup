@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "additional.d.ts"
-, "src/pages/_middleware.ts--"  ],
+, "src/pages/_middleware.ts--", "src/pages/[pseudoLocale]/[link].tsx--"  ],
   "exclude": [
     "node_modules"
   ]

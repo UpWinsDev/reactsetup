@@ -6,6 +6,8 @@ import { useRouter } from 'next/router'
 import getConfig from 'next/config'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
+import Seo from '../../components/Seo'
+
 import styles from '../../styles/Home.module.css'
 import logoTwitter from '../../assets/twitter-logo.png'
 
@@ -24,9 +26,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
 
   return (
     <div className={[styles.container, locale, pseudoLocale].join(' ')}>
-      <Head>
-        <title>Multi Domain SSG using i18n</title>
-      </Head>
+      <Seo title="App multi-tenency - soul" description="Aplicação do conceito de whitelabel"/>
 
       <main className={styles.main}>
         <h1 className={styles.title}>{siteAndLocale ? siteAndLocale.title : `Site not found: '${locale}</strong>`}</h1>
