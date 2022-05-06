@@ -6,27 +6,31 @@ import { useRouter } from 'next/router'
 import getConfig from 'next/config'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
-import Seo from '../../components/Seo'
+import Seo from '../../../components/Seo'
 
-import styles from '../../styles/Home.module.css'
-import logoTwitter from '../../assets/twitter-logo.png'
+import styles from '../../../styles/Home.module.css'
+import logoTwitter from '../../../assets/twitter-logo.png'
 
 type AppProps = { pseudoLocale: string };
 
 const Home: React.FC = ({ pseudoLocale }: AppProps) => {
 
 
+
   const { locales, locale, defaultLocale } = useRouter()
   const { publicRuntimeConfig: { sites, pseudoLocales } } = getConfig()
 
+
+
+
   const nextLocale = pseudoLocales.find(otherLocale => otherLocale !== pseudoLocale)
-  const nextSiteNr = locale === 'site2' ? 1 : 2
+  const nextSiteNr = locale === 'amparo' ? 2 : 1
 
   const siteAndLocale = sites[locale] && sites[locale].locales[pseudoLocale]
 
   return (
     <div className={[styles.container, locale, pseudoLocale].join(' ')}>
-      <Seo title="App multi-tenency - soul" description="Aplicação do conceito de whitelabel"/>
+      <Seo title={siteAndLocale ? `App multi-tenency - ${siteAndLocale.title}` : `Site not found: '${locale}</strong>`} description="Aplicação do conceito de whitelabel"/>
 
       <main className={styles.main}>
         <h1 className={styles.title}>{siteAndLocale ? siteAndLocale.title : `Site not found: '${locale}</strong>`}</h1>
@@ -42,7 +46,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
           <a href={`http://multi${nextSiteNr}-domain.com:3301/${pseudoLocale}`} className={styles.card}>
             <h3>Switch site (<code>locale</code>)</h3>
             <p>Currently: <strong>{locale}</strong></p>
-            <p>Go to: site/domain {nextSiteNr}</p>
+            <p>Go to: _site/domain {nextSiteNr}</p>
           </a>
 
           <Link href={`/${nextLocale}`}>
@@ -79,8 +83,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 
     const data = [
-        { params: { pseudoLocale : 'en' }, locale : 'site1' },
-        { params: { pseudoLocale : 'en' }, locale : 'site2' },
+        { params: { pseudoLocale : 'en' }, locale : 'amparo' },
+        { params: { pseudoLocale : 'en' }, locale : 'mavicard' },
       ];
 
     const project = data.find((p) => p.locale === context.locale);
@@ -105,8 +109,8 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
  //console.log(locales)
 
     const paths = [
-        { params: { pseudoLocale: 'en' }, locale: 'site1' },
-        { params: { pseudoLocale: 'en' }, locale: 'site2' }
+        { params: { pseudoLocale: 'en' }, locale: 'amparo' },
+        { params: { pseudoLocale: 'en' }, locale: 'mavicard' }
     ]
 
     // ...
@@ -116,6 +120,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
       }
 
   }
+
 
 
   export default Home

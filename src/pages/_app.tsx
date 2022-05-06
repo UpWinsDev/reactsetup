@@ -9,11 +9,13 @@ import "../styles/globals.css"
 
 const MyApp: React.FC = ({ Component, pageProps }:AppProps) => {
   return (
-    <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <GlobalStyle/>
-    </ThemeProvider>
-    )
+    <>
+        <ThemeProvider theme={theme}>
+            <GlobalStyle/>
+            <Component {...pageProps} />
+        </ThemeProvider>
+    </>
+  )
 }
 
 export default MyApp

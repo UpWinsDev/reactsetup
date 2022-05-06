@@ -14,14 +14,14 @@ const withImages = require('next-images')
 
 // Next.js’ i18n `locale` is used to determine the site:
 const sites = {
-    site1: {
+    amparo: {
         locales: {
             en: { title: 'Amparo - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den första webbplatsen', description: 'Det här är beskrivningen för den första webbplatsen.' }
         },
         domain: 'multi1-domain.com'
     },
-    site2: {
+    mavicard: {
         locales: {
             en: { title: 'Mavicard - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }

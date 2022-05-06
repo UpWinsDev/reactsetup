@@ -28,8 +28,8 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
-    .site1 { background-color: #DAD }
-    .site2 { background-color: #ADD }
+    .amparo { background-color: #DAD }
+    .mavicard { background-color: #ADD }
     .en { opacity: 1; }
     .se { opacity: 0.6; }
 `;

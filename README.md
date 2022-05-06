@@ -240,7 +240,8 @@ Adicionar: babel.config.js
   ]
 }
 
-#Get started with Tailwind CSS 
+###Get started with Tailwind CSS 
+[https://www.youtube.com/watch?v=xgGm9a1GJWs&t=2412s]
 
 
 ```bash
