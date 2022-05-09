@@ -30,6 +30,8 @@ export default createGlobalStyle`
 
     .amparo { background-color: #E6A759 }
     .mavicard { background-color: #0B9B8C }
+    .you { background: linear-gradient(0deg, rgba(255,145,0,0.6993172268907564) 42%, rgba(45,111,149,1) 60%);
+ }
     .en { opacity: 1; }
     .se { opacity: 0.6; }
 `;
