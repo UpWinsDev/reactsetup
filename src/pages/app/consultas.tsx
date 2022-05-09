@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBar from '../../src/components/SideBar'
+import SideBar from '../../components/SideBar'
 
 const Consultas: React.FC = () => {
     return (

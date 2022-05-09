@@ -41,6 +41,7 @@ export default function middleware(req: NextRequest) {
       status: 404,
     });
 
+
   if (!pathname.includes(".") && !pathname.startsWith("/api")) {
     if (currentHost == "app") {
       if (
@@ -68,7 +69,27 @@ export default function middleware(req: NextRequest) {
       return NextResponse.rewrite(url);
     } */
 
-    console.log(pathname)
+    if (pathname === "/home") {
+        url.pathname = `app/home`;
+        return NextResponse.rewrite(url);
+    }
+    if (pathname === "/agendar") {
+        url.pathname = `app/agendar`;
+        return NextResponse.rewrite(url);
+    }
+    if (pathname === "/consultas") {
+        url.pathname = `app/consultas`;
+        return NextResponse.rewrite(url);
+    }
+    if (pathname === "/paciente") {
+        url.pathname = `app/paciente`;
+        return NextResponse.rewrite(url);
+    }
+    if (pathname === "/prontuario") {
+        url.pathname = `app/prontuario`;
+        return NextResponse.rewrite(url);
+    }
+
 
     //url.pathname = `/_sites/${currentHost}${pathname}`;
     url.pathname = `/_sites${pathname}`;

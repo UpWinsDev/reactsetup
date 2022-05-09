@@ -1,7 +1,7 @@
 import React from 'react'
 import getConfig from 'next/config'
-import SideBar from '../../src/components/SideBar'
-import Navbar from '../../src/components/Navbar'
+import SideBar from '../../components/SideBar'
+import Navbar from '../../components/Navbar'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
