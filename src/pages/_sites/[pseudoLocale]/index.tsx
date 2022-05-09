@@ -6,11 +6,11 @@ import { useRouter } from 'next/router'
 import getConfig from 'next/config'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
-import Seo from '../../../src/components/Seo'
-import Header from '../../../src/components/Header'
+import Seo from '../../../components/Seo'
+import Header from '../../../components/Header'
 
 import styles from '../../../styles/Home.module.css'
-import logoTwitter from '../../../src/assets/twitter-logo.png'
+import logoTwitter from '../../../assets/twitter-logo.png'
 
 type AppProps = { pseudoLocale: string };
 
@@ -30,14 +30,14 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
   const siteAndLocale = sites[locale] && sites[locale].locales[pseudoLocale]
 
   return (
-      
+
     <div className={[styles.container, locale, pseudoLocale].join(' ')}>
       <Seo title={siteAndLocale ? `App multi-tenency - ${siteAndLocale.title}` : `Site not found: '${locale}</strong>`} description="Aplicação do conceito de whitelabel"/>
       <Header/>
-      
+
       <main className={styles.main}>
 
-          
+
         <h1 className={styles.title}>{siteAndLocale ? siteAndLocale.title : `Site not found: '${locale}</strong>`}</h1>
         {siteAndLocale && (
           <p className={styles.description}>{siteAndLocale.description}</p>
