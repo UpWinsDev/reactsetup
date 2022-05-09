@@ -6,19 +6,27 @@ import { useRouter } from 'next/router'
 import getConfig from 'next/config'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
+
 import Seo from '../../../components/Seo'
 import Header from '../../../components/Header'
 
 import styles from '../../../styles/Home.module.css'
 import logoTwitter from '../../../assets/twitter-logo.png'
 
+
+
+
 type AppProps = { pseudoLocale: string }
 
 const Home: React.FC = ({ pseudoLocale }: AppProps) => {
+
+
     const { locales, locale, defaultLocale } = useRouter()
     const {
         publicRuntimeConfig: { sites, pseudoLocales }
     } = getConfig()
+
+
 
     const nextLocale = pseudoLocales.find(
         otherLocale => otherLocale !== pseudoLocale
@@ -40,11 +48,8 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
             <Header />
 
             <main className={styles.main}>
-                <Link href="/home">
-                    <a className="btn border-2 bg-[#8257e6] border-neutral-900">
-                        Ir para a Home
-                    </a>
-                </Link>
+                
+                
                 <h1 className={styles.title}>
                     {siteAndLocale
                         ? siteAndLocale.title
@@ -58,6 +63,8 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
 
                 <h1>Olá mundo - hello</h1>
                 <Image src={logoTwitter} alt="" width="50" height="50" />
+
+           
 
                 <div className={styles.grid}>
                     <a

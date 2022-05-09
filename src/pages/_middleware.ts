@@ -81,12 +81,12 @@ export default function middleware(req: NextRequest) {
         url.pathname = `app/consultas`;
         return NextResponse.rewrite(url);
     }
-    if (pathname === "/paciente") {
-        url.pathname = `app/paciente`;
+    if (pathname === "/pacientes") {
+        url.pathname = `app/pacientes`;
         return NextResponse.rewrite(url);
     }
-    if (pathname === "/prontuario") {
-        url.pathname = `app/prontuario`;
+    if (pathname === "/prontuarios") {
+        url.pathname = `app/prontuarios`;
         return NextResponse.rewrite(url);
     }
 
