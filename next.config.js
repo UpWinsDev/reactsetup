@@ -27,6 +27,13 @@ const sites = {
             se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }
         },
         domain: 'multi2-domain.com'
+    },
+    you: {
+        locales: {
+            en: { title: 'You - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
+            se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }
+        },
+        domain: 'multi3-domain.com'
     }
 }
 const siteKeys = Object.keys(sites)
