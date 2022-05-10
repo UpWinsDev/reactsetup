@@ -1,39 +1,53 @@
 /** @type {import('next').NextConfig} */
-/* const nextConfig = {
-    reactStrictMode: true,
-}
 
-const withImages = require('next-images')
-
-
-module.exports = (withImages({
-    esModule: true
-}), nextConfig) */
 
 const withImages = require('next-images')
 
 // Next.js’ i18n `locale` is used to determine the site:
 const sites = {
+
     amparo: {
+        id: '1',
+        domain: 'multi1-domain.com',
+        stylecustom: {
+            colors: {
+                primary: "#565175",
+                secondary: "#538a95",
+                tertiary: "#67b79e",
+                quarternary: "#ffb727",
+                quinary: "#e4491c"
+            }
+        },
         locales: {
             en: { title: 'Amparo - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den första webbplatsen', description: 'Det här är beskrivningen för den första webbplatsen.' }
-        },
-        domain: 'multi1-domain.com'
+        }
     },
     mavicard: {
+        id: '2',
+        domain: 'multi2-domain.com',
+        stylecustom: {
+            colors: {
+                primary: "#04394e",
+                secondary: "#00875e",
+                tertiary: "#a7cc15",
+                quarternary: "#f5cc17",
+                quinary: "#f56217"
+            }
+        },
         locales: {
             en: { title: 'Mavicard - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }
-        },
-        domain: 'multi2-domain.com'
+        }
     },
     you: {
+        id: '3',
+        domain: 'multi3-domain.com',
         locales: {
             en: { title: 'You - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }
-        },
-        domain: 'multi3-domain.com'
+        }
+
     }
 }
 const siteKeys = Object.keys(sites)

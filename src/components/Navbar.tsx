@@ -4,15 +4,11 @@ import HamburgerSvg from './icons/HamburgerSvg'
 import HouseSvg from './icons/HouseSvg'
 import NameSite from './NameSite'
 
-import { useRouter } from 'next/router'
+const Navbar: React.FC = () => {
 
-type AppProps = { pseudoLocale: string }
-
-const Navbar: React.FC = ({ pseudoLocale }: AppProps) => {
-    const { locales, locale, defaultLocale } = useRouter()
 
     return (
-        <div className={`navbar bg-base-100 justify-between ${locale}`}>
+        <div className={`navbar bg-base-100 justify-between`}>
             <div className="flex">
                 <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
                     <HamburgerSvg />

@@ -3,10 +3,7 @@ import React from 'react'
 import CloseSvg from './icons/CloseSvg'
 import Navbar from './Navbar'
 
-import { useRouter } from 'next/router'
-
 const SideBar = ({ children }) => {
-    const { locales, locale, defaultLocale } = useRouter()
 
     return (
         <div className="drawer">
@@ -18,7 +15,7 @@ const SideBar = ({ children }) => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer" className="drawer-overlay"></label>
                 <ul
-                    className={`${locale} menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content`}
+                    className={`menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content`}
                 >
                     <label
                         htmlFor="my-drawer"

@@ -10,10 +10,8 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import Seo from '../../../components/Seo'
 import Header from '../../../components/Header'
 
-import styles from '../../../styles/Home.module.css'
+//import styles from '../../../styles/Home.module.css'
 import logoTwitter from '../../../assets/twitter-logo.png'
-
-
 
 
 type AppProps = { pseudoLocale: string }
@@ -26,17 +24,16 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
         publicRuntimeConfig: { sites, pseudoLocales }
     } = getConfig()
 
-
-
     const nextLocale = pseudoLocales.find(
         otherLocale => otherLocale !== pseudoLocale
     )
     const nextSiteNr = locale === 'amparo' ? 2 : 1
 
     const siteAndLocale = sites[locale] && sites[locale].locales[pseudoLocale]
+    
 
     return (
-        <div className={[styles.container, locale, pseudoLocale].join(' ')}>
+        <div className="container-xl">
             <Seo
                 title={
                     siteAndLocale
@@ -47,16 +44,16 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
             />
             <Header />
 
-            <main className={styles.main}>
+            <main className="main">
                 
                 
-                <h1 className={styles.title}>
+                <h1 className="title">
                     {siteAndLocale
                         ? siteAndLocale.title
                         : `Site not found: '${locale}</strong>`}
                 </h1>
                 {siteAndLocale && (
-                    <p className={styles.description}>
+                    <p className="description">
                         {siteAndLocale.description}
                     </p>
                 )}
@@ -66,10 +63,10 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
 
            
 
-                <div className={styles.grid}>
+                <div className="grid">
                     <a
                         href={`http://multi${nextSiteNr}-domain.com:3301/${pseudoLocale}`}
-                        className={styles.card}
+                        className="card"
                     >
                         <h3>
                             Switch site (<code>locale</code>)
@@ -81,7 +78,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                     </a>
 
                     <Link href={`/${nextLocale}`}>
-                        <a className={styles.card}>
+                        <a className="card">
                             <h3>
                                 Switch language (<code>pseudoLocale</code>)
                             </h3>
@@ -103,7 +100,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                 </div>
             </main>
 
-            <footer className={styles.footer}>
+            <footer className="footer">
                 <a
                     href="https://github.com/tomsoderlund/nextjs-multi-domain-locale"
                     target="_blank"
