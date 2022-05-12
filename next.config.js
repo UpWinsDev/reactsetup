@@ -8,7 +8,8 @@ const sites = {
 
     amparo: {
         id: '1',
-        domain: 'multi1-domain.com',
+        domain: 'multi1-domain.com:3301',
+        name: 'Amparoapp',
         stylecustom: {
             colors: {
                 primary: "#565175",
@@ -25,7 +26,8 @@ const sites = {
     },
     mavicard: {
         id: '2',
-        domain: 'multi2-domain.com',
+        domain: 'multi2-domain.com:3301',
+        name: 'Mavicard',
         stylecustom: {
             colors: {
                 primary: "#04394e",
@@ -42,7 +44,8 @@ const sites = {
     },
     you: {
         id: '3',
-        domain: 'multi3-domain.com',
+        domain: 'multi3-domain.com:3301',
+        name: 'You',
         locales: {
             en: { title: 'You - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }
