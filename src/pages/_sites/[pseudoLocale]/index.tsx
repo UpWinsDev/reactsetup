@@ -11,7 +11,7 @@ import Seo from '../../../components/Seo'
 import Header from '../../../components/Header'
 
 //import styles from '../../../styles/Home.module.css'
-import logoTwitter from '../../../assets/twitter-logo.png'
+//import logoTwitter from '../../../assets/twitter-logo.png'
 
 
 type AppProps = { pseudoLocale: string }
@@ -30,7 +30,8 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
     const nextSiteNr = locale === 'amparo' ? 2 : 1
 
     const siteAndLocale = sites[locale] && sites[locale].locales[pseudoLocale]
-    
+
+    const logoTwitter = "./img/amparo/logo.png"
 
     return (
         <div className="container-xl">
@@ -45,8 +46,8 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
             <Header />
 
             <main className="main">
-                
-                
+
+
                 <h1 className="title">
                     {siteAndLocale
                         ? siteAndLocale.title
@@ -59,9 +60,13 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                 )}
 
                 <h1>Olá mundo - hello</h1>
-                <Image src={logoTwitter} alt="" width="50" height="50" />
+                {/* <Image src={logoTwitter} alt="" width="50" height="50" /> */}
 
-           
+                {/* <img src={"/img/amparo/logo.png"}/> */}
+
+                <Image src={"/img/amparo/logo.png"} alt="" width="50" height="150" />
+
+
 
                 <div className="grid">
                     <a

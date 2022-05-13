@@ -1,20 +1,30 @@
 import React from 'react'
 import SideBar from '../../components/SideBar'
 import styled, { useTheme } from 'styled-components'
+import tw from 'tailwind-styled-components'
 
 
 const BoxDinamic = ({color}) => {
 
+    const classNameEx = `bg-cyan-500 hover:bg-cyan-600 rounded-lg shadow-xl`
 
-    const boxExemplo = `bg-[${color}] rounded-lg shadow-xl`
-    console.log(boxExemplo)
+    const BoxTw = tw.div`
+        ${p => p.$primary ? "bg-purple-500" : "bg-purple-500"}
+        hover:bg-cyan-600
+        rounded-lg
+        shadow-xl
+    `
 
     return (
-        <div className="bg-cyan-500 hover:bg-cyan-600 rounded-lg shadow-xl">
+        <>
+        <div className={classNameEx}>
             <div className="h-24"></div>
-        </div>)
+        </div>
+        <BoxTw $primary={false}/>
+        </>
+        )
   }
-  
+
 
 
 export default function Home() {
@@ -24,7 +34,7 @@ export default function Home() {
     const primary = theme.colors.primary
     const secondary = theme.colors.secondary
     const tertiary = theme.colors.tertiary
-    
+
 
     return (
         <SideBar
@@ -33,21 +43,24 @@ export default function Home() {
 
                     <div className="w-full max-w-screen-lg grid grid-cols-1 border md:grid-cols-6 gap-x-5 gap-y-2 md:max-w-2xl">
                         <BoxDinamic color={primary}/>
-                        <BoxDinamic color={secondary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
                         <BoxDinamic color={primary}/>
-                        <BoxDinamic color={secondary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
-                        <BoxDinamic color={tertiary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+                        <BoxDinamic color={primary}/>
+
                     </div>
                 </div>
             }
