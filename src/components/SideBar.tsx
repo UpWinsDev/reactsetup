@@ -3,41 +3,35 @@ import React from 'react'
 import CloseSvg from './icons/CloseSvg'
 import Navbar from './Navbar'
 
-const SideBar = ({ children }) => {
-
+function SideBar({ children, isOpen, setIsOpen }) {
     return (
-        <div className="drawer">
-            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
-                <Navbar />
-                {children}
-            </div>
-            
-            <div className="drawer-side">
-                <label htmlFor="my-drawer" className="drawer-overlay"></label>
-                <ul
-                    className={`menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content`}
-                >
-                    <label
-                        htmlFor="my-drawer"
-                        className="btn ml-auto w-100 sm:hidden flex justify-end"
-                    >
-                        <CloseSvg />
-                    </label>
-                    <li>
-                        <Link href="/prontuarios">
-                            <a>Prontuarios</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/pacientes">
-                            <a>Pacientes</a>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    )
-}
+      <main
+        className={
+          " fixed overflow-hidden z-10 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out " +
+          (isOpen
+            ? " transition-opacity opacity-100 duration-500 translate-x-0  "
+            : " transition-all delay-500 opacity-0 translate-x-full  ")
+        }
+      >
+        <section
+          className={
+            " w-screen max-w-lg right-0 absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+            (isOpen ? " translate-x-0 " : " translate-x-full ")
+          }
+        >
+          <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
+            <header className="p-4 font-bold text-lg">Plataforma do Profissional</header>
+            {children}
+          </article>
+        </section>
+        <section
+          className=" w-screen h-full cursor-pointer "
+          onClick={() => {
+            setIsOpen(false);
+          }}
+        ></section>
+      </main>
+    );
+  }
 
 export default SideBar

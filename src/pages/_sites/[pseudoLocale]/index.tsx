@@ -3,8 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useRouter } from 'next/router'
+import {useAppContext} from '../../../context/AppContext'
 import getConfig from 'next/config'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { LockClosedIcon } from '@heroicons/react/solid'
+
+import ImgExport from './../../../components/ImgExport'
 
 import Seo from '../../../components/Seo'
 import Header from '../../../components/Header'
@@ -27,6 +31,10 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
     const siteAndLocale = sites[locale] && sites[locale].locales[pseudoLocale]
 
     const logoTwitter = "./img/amparo/logo.png"
+    ///////
+
+    const dataDomain = useAppContext();
+    const pathName = dataDomain.pathName
 
     return (
         <div className="container-xl">
@@ -38,21 +46,97 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                 }
                 description="Aplicação do conceito de whitelabel"
             />
-            <Header />
 
             <main className="main">
-                <h1 className="title">
-                    {siteAndLocale
-                        ? siteAndLocale.title
-                        : `Site not found: '${locale}</strong>`}
-                </h1>
-                {siteAndLocale && (
-                    <p className="description">
-                        {siteAndLocale.description}
-                    </p>
-                )}
 
-                <h1>Olá mundo - hello</h1>
+
+                <div className="min-h-full bg-white rounded-lg border border-gray-200 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-md w-full space-y-8">
+                    <div>
+                       
+                        <div className="h-8 w-auto mx-auto sm:h-10" style={{ width: '260px'}}>
+                            <ImgExport nomePasta={pathName} width={1080} height={250}/>
+                        </div>
+                        <h2 className="mt-8 text-center text-2xl font-extrabold text-gray-900">Sign in Profissional de Saúde {siteAndLocale
+                                    ? siteAndLocale.title
+                                    : `Site not found: '${locale}</strong>`}</h2>
+                        <p className="mt-2 text-center text-sm text-gray-600">
+                        Or{' '}
+                        
+                        <a href="/home" className="font-medium text-indigo-600 hover:text-indigo-500">
+                            Ir para Dashboard
+                        </a>
+            
+  
+                        </p>
+                    </div>
+                    <form className="mt-8 space-y-6" action="#" method="POST">
+                        <input type="hidden" name="remember" defaultValue="true" />
+                        <div className="rounded-md shadow-sm -space-y-px">
+                        <div>
+                            <label htmlFor="email-address" className="sr-only">
+                            Email address
+                            </label>
+                            <input
+                            id="email-address"
+                            name="email"
+                            type="email"
+                            autoComplete="email"
+                            required
+                            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            placeholder="Email address"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="password" className="sr-only">
+                            Password
+                            </label>
+                            <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            autoComplete="current-password"
+                            required
+                            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            placeholder="Password"
+                            />
+                        </div>
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                        <div className="flex items-center">
+                            <input
+                            id="remember-me"
+                            name="remember-me"
+                            type="checkbox"
+                            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                            />
+                            <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                            Remember me
+                            </label>
+                        </div>
+
+                        <div className="text-sm">
+                            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                            Forgot your password?
+                            </a>
+                        </div>
+                        </div>
+
+                        <div>
+                        <button
+                            type="submit"
+                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+                            <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
+                            </span>
+                            Sign in
+                        </button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
 
 
                 <div className="grid">
@@ -61,27 +145,13 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                         className="card"
                     >
                         <h3>
-                            Switch site (<code>locale</code>)
+                            Alternar site (<code>locale</code>)
                         </h3>
                         <p>
-                            Currently: <strong>{locale}</strong>
+                            De: <strong>{locale}</strong>
                         </p>
-                        <p>Go to: _site/domain {nextSiteNr}</p>
+                        <p>Ir para: dominio {nextSiteNr}</p>
                     </a>
-
-                    <Link href={`/${nextLocale}`}>
-                        <a className="card">
-                            <h3>
-                                Switch language (<code>pseudoLocale</code>)
-                            </h3>
-                            <p>
-                                Currently: <strong>{pseudoLocale}</strong>
-                            </p>
-                            <p>
-                                Switch locale to: <strong>{nextLocale}</strong>
-                            </p>
-                        </a>
-                    </Link>
 
                 </div>
             </main>
@@ -92,7 +162,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Get the source code
+                    MVP - APP Multitenant Soultech
                 </a>
             </footer>
         </div>

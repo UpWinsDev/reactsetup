@@ -90,6 +90,7 @@ export default createGlobalStyle`
         font-size: 1.1rem;
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
     }
+    
     .imageLogo {
         object-fit: contain;
         width: 100% !important;
