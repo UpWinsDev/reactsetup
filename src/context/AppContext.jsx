@@ -19,6 +19,7 @@ export function AppWrapper({ children }) {
         id: siteAndLocale.id,
         domain: siteAndLocale.domain,
         name: siteAndLocale.name,
+        pathName: siteAndLocale.pathName,
         locales: siteAndLocale.locales
     }
 

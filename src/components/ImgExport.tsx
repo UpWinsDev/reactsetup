@@ -1,7 +1,12 @@
 import Image from 'next/image'
 
-export default function ImgExport(props){
+const ImgExport = ({nomePasta, width, height}) => {
+
+    nomePasta = nomePasta == undefined ? 'default' : nomePasta;
+
     return (
-        <Image src={"/img/"+props+"/logo.png"} alt="" width="50" height="150" />
+        <Image src={`/img/${nomePasta}/logo.png`} width={width} height={height} priority
+         />
     )
 }
+export default ImgExport

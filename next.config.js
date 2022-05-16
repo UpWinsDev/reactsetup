@@ -10,11 +10,12 @@ const sites = {
         id: '1',
         domain: 'multi1-domain.com:3301',
         name: 'Amparoapp',
+        pathName: 'amparo',
         stylecustom: {
             colors: {
-                primary: "#565175",
-                secondary: "#538a95",
-                tertiary: "#67b79e",
+                primary: "#FEAE71",
+                secondary: "#FE235D",
+                tertiary: "#e4491c",
                 quarternary: "#ffb727",
                 quinary: "#e4491c"
             }
@@ -28,10 +29,11 @@ const sites = {
         id: '2',
         domain: 'multi2-domain.com:3301',
         name: 'Mavicard',
+        pathName: 'mavicard',
         stylecustom: {
             colors: {
-                primary: "#04394e",
-                secondary: "#00875e",
+                primary: "#98DDD4",
+                secondary: "#0B9B8C",
                 tertiary: "#a7cc15",
                 quarternary: "#f5cc17",
                 quinary: "#f56217"
@@ -46,6 +48,7 @@ const sites = {
         id: '3',
         domain: 'multi3-domain.com:3301',
         name: 'You',
+        pathName: 'you',
         locales: {
             en: { title: 'You - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }

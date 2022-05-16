@@ -12,6 +12,7 @@ const SideBar = ({ children }) => {
                 <Navbar />
                 {children}
             </div>
+            
             <div className="drawer-side">
                 <label htmlFor="my-drawer" className="drawer-overlay"></label>
                 <ul

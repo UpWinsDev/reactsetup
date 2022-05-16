@@ -1,5 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
+import styled, { useTheme } from 'styled-components'
+import {useAppContext} from '../context/AppContext'
 import { Popover, Transition } from '@headlessui/react'
 import {
     BookmarkAltIcon,
@@ -16,6 +18,7 @@ import {
     XIcon
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import ImgExport from './ImgExport'
 
 const solutions = [
     {
@@ -101,6 +104,16 @@ function classNames(...classes) {
 }
 
 const Header = () => {
+
+    const dataDomain = useAppContext();
+    const pathName = dataDomain.pathName
+
+    // Rodar cores de forma global
+    const theme = useTheme()
+    const primary = theme.colors.primary
+    const secondary = theme.colors.secondary
+    const tertiary = theme.colors.tertiary
+    
     return (
         <Popover className="relative bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -108,11 +121,14 @@ const Header = () => {
                     <div className="flex justify-start lg:w-0 lg:flex-1">
                         <a href="#">
                             <span className="sr-only">Workflow</span>
-                            <img
+                            {/* <img
                                 className="h-8 w-auto sm:h-10"
                                 src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                                 alt=""
-                            />
+                            /> */}
+                            <div className="h-8 w-auto sm:h-10" style={{ width: '180px'}}>
+                                <ImgExport nomePasta={pathName} width={1080} height={250}/>
+                            </div>
                         </a>
                     </div>
                     <div className="-mr-2 -my-2 md:hidden">
@@ -368,11 +384,9 @@ const Header = () => {
                         <div className="pt-5 pb-6 px-5">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <img
-                                        className="h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                                        alt="Workflow"
-                                    />
+                                <div className="h-8 w-auto sm:h-10" style={{ width: '180px'}}>
+                                    <ImgExport nomePasta={pathName} width={1080} height={250}/>
+                                </div>
                                 </div>
                                 <div className="-mr-2">
                                     <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
