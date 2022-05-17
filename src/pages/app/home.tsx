@@ -43,31 +43,26 @@ export default function Home() {
 
     return (
         <>
-        <header className="flex justify-between p-4">
-            <h1 className="font-medium">Example of a drawer</h1>
-            <button
-                className="bg-green-600 text-white rounded px-4 py-1"
-                onClick={() => setIsOpen(true)}>
-                Menu
-            </button>
-        </header>
-        <section className="flex space-x-6 m-4">
-            <div className="text-6xl">{"🦙"}</div>
-            <div className="text-6xl">{"🐝"}</div>
-            <div className="text-6xl">{"🦄"}</div>
-            <div className="text-6xl">{"🐌"}</div>
-        </section>
-        <p className="m-4">
-            This is an implementation of a drawer using tailwindcss.
-        </p>
-        <p className="m-4 bg-yellow-100 p-6 text-yellow-900 border border-dashed border-yellow-400">
-            Follow me at Twitter{" "}
-            <a className="text-blue-600" href="https://twitter.com/@Cuadraman">
-            @Cuadraman
-            </a>{" "}
-            for more tips
-        </p>
-        <SideBar isOpen={isOpen} setIsOpen={setIsOpen}>
+        <SideBar>
+            <header className="flex justify-between p-4">
+                <h1 className="font-medium">Example of a drawer</h1>
+            </header>
+            <section className="flex space-x-6 m-4">
+                <div className="text-6xl">{"🦙"}</div>
+                <div className="text-6xl">{"🐝"}</div>
+                <div className="text-6xl">{"🦄"}</div>
+                <div className="text-6xl">{"🐌"}</div>
+            </section>
+            <p className="m-4">
+                This is an implementation of a drawer using tailwindcss.
+            </p>
+            <p className="m-4 bg-yellow-100 p-6 text-yellow-900 border border-dashed border-yellow-400">
+                Follow me at Twitter{" "}
+                <a className="text-blue-600" href="https://twitter.com/@Cuadraman">
+                @Cuadraman
+                </a>{" "}
+                for more tips
+            </p>
             <div className="pl-8">
                 <h3><a href="/">Voltar</a></h3>
                 <BoxDinamic color={primary}/>

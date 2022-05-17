@@ -55,7 +55,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                     <div>
                        
                         <div className="h-8 w-auto mx-auto sm:h-10" style={{ width: '260px'}}>
-                            <ImgExport nomePasta={pathName} width={1080} height={250}/>
+                            <ImgExport width={1080} height={250}/>
                         </div>
                         <h2 className="mt-8 text-center text-2xl font-extrabold text-gray-900">Sign in Profissional de Saúde {siteAndLocale
                                     ? siteAndLocale.title

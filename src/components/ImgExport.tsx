@@ -1,8 +1,12 @@
 import Image from 'next/image'
+import {useAppContext} from './../context/AppContext'
 
-const ImgExport = ({nomePasta, width, height}) => {
+const ImgExport = ({width, height}) => {
 
-    nomePasta = nomePasta == undefined ? 'default' : nomePasta;
+    const dataDomain = useAppContext();
+    const pathName = dataDomain.pathName
+
+    const nomePasta = pathName == undefined ? 'default' : pathName;
 
     return (
         <Image src={`/img/${nomePasta}/logo.png`} width={width} height={height} priority

@@ -49,6 +49,15 @@ const sites = {
         domain: 'multi3-domain.com:3301',
         name: 'You',
         pathName: 'you',
+        stylecustom: {
+            colors: {
+                primary: "#FF9100",
+                secondary: "#2D6F95",
+                tertiary: "#f5cc17",
+                quarternary: "#f5cc17",
+                quinary: "#f56217"
+            }
+        },
         locales: {
             en: { title: 'You - Whitelabel', description: 'Desenvolvimento multi tenant, para multiplos dominios em um unico app.' },
             se: { title: 'Den andra webbplatsen', description: 'Det här är beskrivningen för den andra webbplatsen.' }
