@@ -12,6 +12,7 @@ export default function middleware(req: NextRequest) {
   // Get hostname of request (e.g. demo.vercel.pub)
   const hostname = req.headers.get("host");
 
+  
 
   if (!hostname)
     return new Response(null, {
@@ -41,14 +42,16 @@ export default function middleware(req: NextRequest) {
       status: 404,
     });
 
-
   if (!pathname.includes(".") && !pathname.startsWith("/api")) {
+
     if (currentHost == "app") {
+
       if (
         pathname === "/login" &&
         (req.cookies["next-auth.session-token"] ||
           req.cookies["__Secure-next-auth.session-token"])
       ) {
+        
         url.pathname = "/";
         return NextResponse.redirect(url);
       }

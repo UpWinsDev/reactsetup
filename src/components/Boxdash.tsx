@@ -6,15 +6,15 @@ interface Props {
 
 const Boxdash = ({children}:Props) => {
 
-    let ThemeColors = `bg-white text-blue-900 border-gray-200 border`
     let dark = false
+    let ThemeColors = ''
 
     if(dark){
-        ThemeColors = `bg-slate-800 text-gray-200 border-slate-200`
+        ThemeColors = `dark:bg-slate-900 dark:text-white dark:border-blue-200`
     }
 
     return (
-        <div className={`shadow-md ${ThemeColors} rounded-lg m-2 py-4 px-4 sm:px-3 lg:px-5`}>
+        <div className={`${ThemeColors} shadow-md bg-white text-blue-900 border-gray-200 border rounded-lg m-2 py-4 px-4 sm:px-3 lg:px-5`}>
             <div>{children}</div>
         </div>
 

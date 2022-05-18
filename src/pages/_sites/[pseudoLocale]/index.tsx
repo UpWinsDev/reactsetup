@@ -23,15 +23,8 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
         publicRuntimeConfig: { sites, pseudoLocales }
     } = getConfig()
 
-    const nextLocale = pseudoLocales.find(
-        otherLocale => otherLocale !== pseudoLocale
-    )
-    const nextSiteNr = locale === 'amparo' ? 2 : 1
-
     const siteAndLocale = sites[locale] && sites[locale].locales[pseudoLocale]
 
-    const logoTwitter = "./img/amparo/logo.png"
-    ///////
 
     const dataDomain = useAppContext();
     const pathName = dataDomain.pathName
@@ -145,18 +138,33 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                 </div>
 
 
-                <div className="grid">
-                    <a
-                        href={`http://multi${nextSiteNr}-domain.com:3301/${pseudoLocale}`}
-                        className="card"
-                    >
+                <div className="grid lg:grid-cols-3 gap-4 mt-3">
+                    <a href={`http://multi1-domain.com:3301/${pseudoLocale}`} className="border rounded-xl p-2 shadow-md hover:border-blue-900 hover:bg-blue-900 hover:text-sky-50">
                         <h3>
                             Alternar site (<code>locale</code>)
                         </h3>
                         <p>
-                            De: <strong>{locale}</strong>
+                            De: {locale}
                         </p>
-                        <p>Ir para: dominio {nextSiteNr}</p>
+                        <p>Ir para: <strong>Dominio Amparo</strong></p>
+                    </a>
+                    <a href={`http://multi2-domain.com:3301/${pseudoLocale}`} className="border rounded-xl p-2 shadow-md hover:border-blue-900 hover:bg-blue-900 hover:text-sky-50">
+                        <h3>
+                            Alternar site (<code>locale</code>)
+                        </h3>
+                        <p>
+                            De: {locale}
+                        </p>
+                        <p>Ir para: <strong>Dominio Mavicard</strong></p>
+                    </a>
+                    <a href={`http://multi3-domain.com:3301/${pseudoLocale}`} className="border rounded-xl p-2 shadow-md hover:border-blue-900 hover:bg-blue-900 hover:text-sky-50">
+                        <h3>
+                            Alternar site (<code>locale</code>)
+                        </h3>
+                        <p>
+                            De: {locale}
+                        </p>
+                        <p>Ir para: <strong>Dominio You</strong></p>
                     </a>
 
                 </div>
