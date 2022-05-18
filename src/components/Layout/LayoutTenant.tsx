@@ -48,7 +48,7 @@ const LayoutTenant = ({children}:Props) => {
 
         </ul>
       </div>
-      <div className="h-screen bg-white flex-1 p-7">
+      <div className="h-screen bg-white overflow-y-auto flex-1">
         {children}
       </div>
     </div>
