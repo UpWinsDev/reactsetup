@@ -23,7 +23,7 @@ const LayoutApp = ({children}:Props) => {
   return (
     <div className="flex">
 
-      <div className={` ${open ? "w-48" : "w-16 "} bg-blue-900 h-screen p-3 pt-5 relative duration-200`}>
+      <div className={` ${open ? "w-48" : "w-16 "} bg-blue-900 h-screen p-4 pt-5 relative duration-200`}>
 
 
 
@@ -62,7 +62,7 @@ const LayoutApp = ({children}:Props) => {
           ))}
         </ul>
       </div>
-      <div className="h-screen bg-slate-50 overflow-y-auto flex-1 p-6">
+      <div className="h-screen bg-slate-50 overflow-y-auto flex-1 p-4">
         <NavBar/>
         {children}
       </div>
