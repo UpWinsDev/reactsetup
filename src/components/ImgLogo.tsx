@@ -13,7 +13,7 @@ const ImgLogo = ({height}) => {
     return (
 
         <div className="mx-auto" style={{ height: height, position: 'relative'}}>
-            <Image src={localImg} layout='fill'/>
+            <Image src={localImg} objectFit="contain" layout='fill' priority/>
         </div>
     )
 }

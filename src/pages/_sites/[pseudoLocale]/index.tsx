@@ -60,8 +60,8 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                     <div className="max-w-md w-full space-y-8">
                     <div>
 
-                        <div className="w-auto mx-auto sm:h-10" style={{  width: '150px', height:'50px'}}>
-                            <ImgLogo height={55}/>
+                        <div className="w-auto mx-auto sm:h-10" style={{  width: '200px', height:'60px'}}>
+                            <ImgLogo height={60}/>
                         </div>
                         <h2 className="mt-8 text-center text-2xl font-extrabold text-gray-900">Sign in Profissional de Saúde {siteAndLocale
                                     ? siteAndLocale.title

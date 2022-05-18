@@ -84,36 +84,20 @@ const LayoutApp = ({children}:Props) => {
         </svg>
         <div className="flex gap-x-4 p-2 items-center">
 
-            {/* <svg xmlns="http://www.w3.org/2000/svg" className={`cursor-pointer duration-500 ${
-              open && "rotate-[360deg]"
-            }`} viewBox="0 0 20 20" fill="currentColor">
-            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-            </svg> */}
 
-            <div className="w-auto mx-auto sm:h-10" style={{ width: '150px', height:'50px'}}>
+
+            <div className={`w-auto mx-auto sm:h-10 cursor-pointer duration-500 ${
+              open && "rotate-[360deg]"
+            }`} style={{ width: '150px', height:'50px'}}>
                 <ImgLogo height={50}/>
             </div>
 
-
-            {/* <img
-            src="./src/assets/logo.png"
-            className={`cursor-pointer duration-500 ${
-              open && "rotate-[360deg]"
-            }`} />*/}
-
-          {/* <h1
-            className={`text-white origin-left font-medium text-xl duration-200 ${
-              !open && "scale-0"
-            }`}
-          >
-            Soultech
-          </h1> */}
         </div>
-        <ul className="pt-6">
+        <ul className="pt-3">
           {Menus.map((Menu, index) => (
             <li
               key={index}
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4
+              className={`flex hover:bg-blue-800 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4
               ${Menu.gap ? "mt-9" : "mt-2"} ${
                 index === 0 && "bg-light-white"
               } `}
@@ -129,7 +113,7 @@ const LayoutApp = ({children}:Props) => {
           ))}
         </ul>
       </div>
-      <div className="h-screen bg-white flex-1 p-7">
+      <div className="h-screen  bg-white flex-1 p-7">
         <NavBar/>
         {children}
       </div>
