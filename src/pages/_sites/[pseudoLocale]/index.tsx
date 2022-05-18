@@ -56,7 +56,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
             <main className="main">
 
 
-                <div className="min-h-full bg-white rounded-lg border border-gray-200 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                <div className="min-h-full bg-white rounded-lg border border-gray-200 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 shadow-md">
                     <div className="max-w-md w-full space-y-8">
                     <div>
 
