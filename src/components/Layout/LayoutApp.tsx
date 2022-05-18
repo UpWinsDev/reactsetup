@@ -1,7 +1,4 @@
-import { useState } from "react";
-import React from 'react'
-import Link from 'next/link'
-
+import React, { useState } from "react";
 import ImgLogo from '../ImgLogo'
 import NavBar from '../Navbar'
 
@@ -60,7 +57,7 @@ export const SvgDocument = ({type}) => {
 
 const LayoutApp = ({children}:Props) => {
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const Menus = [
     { title: "Home", src: "home", svg: "home"},
     { title: "Agendar", src: "agendar", svg: "agendar", gap: true },
@@ -73,11 +70,11 @@ const LayoutApp = ({children}:Props) => {
   return (
     <div className="flex">
 
-      <div className={` ${open ? "w-48" : "w-16 "} bg-blue-900 h-screen p-4 pt-5 relative duration-200`}>
+      <div className={` ${open ? "w-48" : "w-16 "} bg-sky-900 h-screen p-4 pt-5 relative duration-200`}>
 
 
 
-        <svg xmlns="http://www.w3.org/2000/svg" onClick={() => setOpen(!open)} className={`absolute cursor-pointer -right-3 top-9 w-7 bg-white border-blue-900
+        <svg xmlns="http://www.w3.org/2000/svg" onClick={() => setOpen(!open)} className={`absolute cursor-pointer -right-3 top-9 w-7 bg-white border-sky-900
                         border-2 rounded-full  ${!open && "rotate-180"}`} viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
         </svg>
@@ -97,7 +94,7 @@ const LayoutApp = ({children}:Props) => {
             <a href={Menu.src}>
                 <li
                 key={index}
-                className={`flex hover:bg-blue-800 rounded-md p-1 cursor-pointer hover:bg-light-white hover:text-sky-50 text-gray-300 text-sm items-center gap-x-4
+                className={`flex hover:bg-sky-800 rounded-md p-1 cursor-pointer hover:bg-light-white hover:text-sky-50 text-gray-300 text-sm items-center gap-x-4
                 ${Menu.gap ? "mt-9" : "mt-2"} ${
                     index === 0 && "bg-light-white"
                 } `}

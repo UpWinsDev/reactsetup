@@ -19,7 +19,7 @@ const LayoutTenant = ({children}:Props) => {
     const tertiary = theme.colors.tertiary
 
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const Menus = [
     { title: "Home", src: "Chart_fill"},
     { title: "Inbox", src: "Chat" },

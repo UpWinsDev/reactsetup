@@ -1,19 +1,14 @@
-import { useState } from "react";
-import React from 'react'
-
+import React, { useState } from "react";
 import ImgLogo from '../ImgLogo'
 
 interface Props {
     children: React.ReactNode
 }
 
-
-
 const LayoutPublic = ({children}:Props) => {
 
-
-
   const [open, setOpen] = useState(true);
+
   const Menus = [
     { title: "Home", src: "home"},
     { title: "Inbox", src: "Chat" },
