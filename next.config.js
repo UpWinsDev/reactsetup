@@ -83,6 +83,7 @@ module.exports = {
         esModule: true
     })],
 
+
     // We "hijack" Next.js’ i18n system to use for different sites
     i18n: {
         locales: siteKeys,

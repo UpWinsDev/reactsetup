@@ -1,26 +1,32 @@
 import { useState } from "react";
 import React from 'react'
 
-import ImgExport from '../components/ImgExport'
+import ImgLogo from '../ImgLogo'
+
+interface Props {
+    children: React.ReactNode
+}
 
 
 
-const SideBar = ({children}) => {
+const LayoutPublic = ({children}:Props) => {
+
+
 
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Home", src: "Chart_fill"},
+    { title: "Home", src: "home"},
     { title: "Inbox", src: "Chat" },
     { title: "Agendar", src: "agendar", gap: true },
-    { title: "Prontuário ", src: "prontuario" },
-    { title: "Reservas", src: "Search" },
-    { title: "Pacientes", src: "Chart" },
-    { title: "Consultas ", src: "Folder", gap: true },
-    { title: "Perfil", src: "Setting" },
+    { title: "Prontuários", src: "prontuarios" },
+    { title: "Pacientes", src: "pacientes" },
+    { title: "Consultas ", src: "consultas", gap: true },
+    { title: "Sair", src: "Setting" },
   ];
 
   return (
     <div className="flex">
+
       <div className={` ${open ? "w-48" : "w-16 "} bg-blue-900 h-screen p-3 pt-5 relative duration-300`}>
 
 
@@ -36,7 +42,7 @@ const SideBar = ({children}) => {
             }`} viewBox="0 0 20 20" fill="currentColor">
             <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
             </svg> */}
-            <ImgExport  width={1080} height={250} />
+            <ImgLogo  width={1080} height={250} />
 
             {/* <img
             src="./src/assets/logo.png"
@@ -78,4 +84,4 @@ const SideBar = ({children}) => {
     </div>
   );
 };
-export default SideBar;
+export default LayoutPublic

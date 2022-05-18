@@ -8,10 +8,10 @@ import getConfig from 'next/config'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { LockClosedIcon } from '@heroicons/react/solid'
 
-import ImgExport from './../../../components/ImgExport'
+import ImgLogo from './../../../components/ImgLogo'
 
 import Seo from '../../../components/Seo'
-import Header from '../../../components/Header'
+import { useTheme } from 'styled-components';
 
 type AppProps = { pseudoLocale: string }
 
@@ -36,6 +36,12 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
     const dataDomain = useAppContext();
     const pathName = dataDomain.pathName
 
+         // Rodar cores de forma global
+         const theme = useTheme()
+         const primary = theme.colors.primary
+         const secondary = theme.colors.secondary
+         const tertiary = theme.colors.tertiary
+
     return (
         <div className="container-xl">
             <Seo
@@ -53,21 +59,21 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                 <div className="min-h-full bg-white rounded-lg border border-gray-200 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-md w-full space-y-8">
                     <div>
-                       
-                        <div className="h-8 w-auto mx-auto sm:h-10" style={{ width: '260px'}}>
-                            <ImgExport width={1080} height={250}/>
+
+                        <div className="w-auto mx-auto sm:h-10" style={{  width: '150px', height:'50px'}}>
+                            <ImgLogo height={55}/>
                         </div>
                         <h2 className="mt-8 text-center text-2xl font-extrabold text-gray-900">Sign in Profissional de Saúde {siteAndLocale
                                     ? siteAndLocale.title
                                     : `Site not found: '${locale}</strong>`}</h2>
                         <p className="mt-2 text-center text-sm text-gray-600">
                         Or{' '}
-                        
+
                         <a href="/home" className="font-medium text-indigo-600 hover:text-indigo-500">
                             Ir para Dashboard
                         </a>
-            
-  
+
+
                         </p>
                     </div>
                     <form className="mt-8 space-y-6" action="#" method="POST">
@@ -126,7 +132,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                         <div>
                         <button
                             type="submit"
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
                         >
                             <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                             <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
@@ -156,7 +162,7 @@ const Home: React.FC = ({ pseudoLocale }: AppProps) => {
                 </div>
             </main>
 
-            <footer className="footer">
+            <footer className="footer bg-gray-200">
                 <a
                     href="https://github.com/tomsoderlund/nextjs-multi-domain-locale"
                     target="_blank"

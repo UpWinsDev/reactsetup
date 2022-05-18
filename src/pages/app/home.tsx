@@ -1,5 +1,4 @@
 import React from 'react'
-import SideBar from '../../components/SideBar'
 import styled, { useTheme } from 'styled-components'
 import tw from 'tailwind-styled-components'
 
@@ -43,8 +42,7 @@ export default function Home() {
 
     return (
         <>
-        <SideBar>
-            <header className="flex justify-between p-4">
+        <header className="flex justify-between p-4">
                 <h1 className="font-medium">Example of a drawer</h1>
             </header>
             <section className="flex space-x-6 m-4">
@@ -72,8 +70,7 @@ export default function Home() {
                 <BoxDinamic color={primary}/>
 
             </div>
-        </SideBar>
         </>
-        
+
     )
 }
